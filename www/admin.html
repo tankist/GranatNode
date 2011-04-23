@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="/css/reset.css">
+	<link rel="stylesheet" href="/css/admin/common.css">
+	<link rel="stylesheet" href="/css/admin/ui/jquery-ui-1.8.11.custom.css">
+	<link rel="stylesheet" href="/css/admin/sellcast.ui.products.css">
+	<link rel="stylesheet" href="/css/admin/sellcast.ui.dash.css">
+	<link rel="stylesheet" href="/css/admin/sellcast.ui.common.css">
+	<link rel="stylesheet" href="/css/admin/paginator.css">
+	<link rel="stylesheet" href="/css/admin/account-settings.css">
+	<link rel="stylesheet" href="/css/admin/button.css">
+	<link rel="stylesheet" href="/css/admin/orders.css">
+	<link rel="stylesheet" href="/css/admin/products.css">
+	<!--[if lt IE 8]>
+	<link rel="stylesheet" href="/css/ie7.css', 'all', 'lt IE 8">
+	<![endif]-->
+	<!--[if lt IE 7]>
+	<link rel="stylesheet" href="/css/ie6.css">
+	<![endif]-->
+	<title>Admin</title>
+</head>
+<body>
+<div class="body-wrapper">
+	<div class="header-wrapper">
+		<div class="header-menu-wrapper">
+			<div id="header-menu">
+				<ul>
+					<li><a href="#!/collections">Collections</a></li>
+					<li><a href="#!/furniture">Furniture</a></li>
+					<li><a href="#!/users">Users</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="header-submenu-wrapper">
+			<div id="header-submenu">
+				<div class="submenu-right">
+					<div class="fr second-button-link"><a href="#!/logout">Logout</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="message-wrapper ui-helper-hidden"><div id="message">&nbsp;</div></div>
+	<div id="body"></div>
+</div>
+<div class="footer-wrapper">
+	<div class="footer">
+		<div class="fl">&copy; Granat <span class="footerDate">&nbsp;</span> | Website Design & Hosting by <a href="http://www.yobasoft.org.ua/">Yobasoft</a></div>
+	</div>
+</div>
+<div id="formContainer" class="ui-helper-hidden"></div>
+<script type="text/javascript" src="/js/lab.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/js/backbone/underscore.js"></script>
+<script type="text/javascript" src="/js/backbone/backbone.js"></script>
+<script type="text/javascript" src="/js/dot.js"></script>
+
+<script type="text/javascript" src="/js/common.js"></script>
+<script type="text/javascript" src="/js/admin/common.js"></script>
+
+<script type="text/html" id="userList">
+	<ul class="toolbar">
+		<li><a href="#!/users/add">Add User</a></li>
+	</ul>
+	<div id="actionBody"></div>
+</script>
+<script type="text/html" id="addUserForm">
+<form name="user" action="/admin/users/" method="post">
+	<dl>
+		<dt><label for="user-first_name">First Name: </label></dt>
+		<dd><input id="user-first_name" type="text" name="first_name"></dd>
+	</dl>
+	<dl>
+		<dt><label for="user-last_name">Last Name: </label></dt>
+		<dd><input type="text" name="last_name" id="user-last_name"></dd>
+	</dl>
+	<dl>
+		<dt><label for="user-email">Email: </label></dt>
+		<dd><input type="text" name="email" id="user-email"></dd>
+	</dl>
+	<dl>
+		<dt><label for="user-password">Password: </label></dt>
+		<dd><input type="password" name="password" id="user-password"></dd>
+	</dl>
+	<dl>
+		<dt><label for="user-password2">Confirm password: </label></dt>
+		<dd><input type="password" name="password2" id="user-password2"></dd>
+	</dl>
+	<dl>
+		<dt><label for="user-role">Role: </label></dt>
+		<dd><select name="role" id="user-role">
+			<option value="user">User</option>
+			<option value="admin">Admin</option>
+		</select></dd>
+	</dl>
+	<dl>
+		<dt><label for="user-status">Status: </label></dt>
+		<dd><select name="status" id="user-status">
+			<option value="active">Active</option>
+			<option value="banned">Banned</option>
+			<option value="suspended">Suspended</option>
+		</select></dd>
+	</dl>
+</form>
+</script>
+<script type="text/html" id="collectionForm">
+		<form name="user" action="/admin/collections/" method="post">
+			<input id="id" type="hidden" name="id">
+			<dl>
+				<dt><label for="collection-name">Collection Name: </label></dt>
+				<dd><input id="collection-name" type="text" name="name"></dd>
+			</dl>
+		</form>
+</script>
+</body>
+</html>
